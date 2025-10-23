@@ -2,11 +2,10 @@
 pragma solidity 0.8.19;
 
 /**
- * @title IDataBankPlayground
- * @notice Interface for DataBankPlayground testing contract
- * @dev This interface is for testing purposes only. Not for production use.
+ * @title ITellorDataBank
+ * @notice Interface for TellorDataBank contract
  */
-interface IDataBankPlayground {
+interface ITellorDataBank {
     struct AggregateData {
         bytes value;
         uint256 power;
@@ -14,13 +13,6 @@ interface IDataBankPlayground {
         uint256 attestationTimestamp;
         uint256 relayTimestamp;
     }
-
-    /**
-     * @dev updates oracle data with new value for playground testing
-     * @param _queryId the query ID to update the oracle data for
-     * @param _value the value to update the oracle data with
-     */
-    function updateOracleDataPlayground(bytes32 _queryId, bytes memory _value) external;
 
     /**
      * @dev returns the current aggregate data for a given query ID
