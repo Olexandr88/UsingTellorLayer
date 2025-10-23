@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "IDataBankPlayground",
-  "sourceName": "contracts/interfaces/IDataBankPlayground.sol",
+  "contractName": "ITellorDataBank",
+  "sourceName": "contracts/interfaces/ITellorDataBank.sol",
   "abi": [
     {
       "inputs": [
@@ -46,7 +46,7 @@
               "type": "uint256"
             }
           ],
-          "internalType": "struct IDataBankPlayground.AggregateData",
+          "internalType": "struct ITellorDataBank.AggregateData",
           "name": "_aggregateData",
           "type": "tuple"
         }
@@ -111,30 +111,12 @@
               "type": "uint256"
             }
           ],
-          "internalType": "struct IDataBankPlayground.AggregateData",
+          "internalType": "struct ITellorDataBank.AggregateData",
           "name": "_aggregateData",
           "type": "tuple"
         }
       ],
       "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "_queryId",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "bytes",
-          "name": "_value",
-          "type": "bytes"
-        }
-      ],
-      "name": "updateOracleDataPlayground",
-      "outputs": [],
-      "stateMutability": "nonpayable",
       "type": "function"
     }
   ],

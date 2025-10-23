@@ -10,7 +10,7 @@ const ETH_USD_QUERY_ID = h.hash(ETH_USD_QUERY_DATA)
 // define tellor chain parameters
 const TELLOR_CHAIN_ID = "tellor-1"
 
-describe("DataBankPlayground - Function Tests", function () {
+describe("TellorLab - Function Tests", function () {
   // init the assets which will be used in the tests
   let accounts, databank, validatorSet;
 
@@ -20,7 +20,7 @@ describe("DataBankPlayground - Function Tests", function () {
     // init tellor validator set
     validatorSet = await h.createTellorValset({tellorChainId: TELLOR_CHAIN_ID})
     // deploy databank
-    databank = await ethers.deployContract("DataBankPlayground");
+    databank = await ethers.deployContract("TellorLab");
   })
 
   it("updateOracleData, getCurrentData, getValueCount", async function () {
@@ -38,15 +38,15 @@ describe("DataBankPlayground - Function Tests", function () {
     assert.equal(await databank.getAggregateValueCount(ETH_USD_QUERY_ID), 1, "value count should be correct")
   });
 
-  it("updateOracleDataPlayground, getCurrentData, getValueCount", async function () {
+  it("updateOracleDataLab, getCurrentData, getValueCount", async function () {
     // price as $3000
     price = "3000";
     // SpotPrice reported with 18 decimals
     priceWithDecimals = h.toWei(price);
     // encode the price as bytes
     let _value = abiCoder.encode(["uint256"], [priceWithDecimals])
-    // update the oracle data using the playground function
-    await databank.updateOracleDataPlayground(ETH_USD_QUERY_ID, _value);
+    // update the oracle data using the lab function
+    await databank.updateOracleDataLab(ETH_USD_QUERY_ID, _value);
     // get the current aggregate data
     let _dataRetrieved =  await databank.getCurrentAggregateData(ETH_USD_QUERY_ID);
     // assert the value is correct
